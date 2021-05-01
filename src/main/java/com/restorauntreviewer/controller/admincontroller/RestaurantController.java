@@ -1,7 +1,6 @@
 package com.restorauntreviewer.controller.admincontroller;
 import java.util.List;
 
-import com.restorauntreviewer.View;
 import com.restorauntreviewer.model.Restaurant;
 import com.restorauntreviewer.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;

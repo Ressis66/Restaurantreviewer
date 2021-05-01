@@ -1,7 +1,5 @@
 package com.restorauntreviewer.controller.usercontroller;
 
-import com.fasterxml.jackson.annotation.JsonView;
-import com.restorauntreviewer.View;
 import com.restorauntreviewer.model.Restaurant;
 import com.restorauntreviewer.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
