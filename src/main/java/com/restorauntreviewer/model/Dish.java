@@ -19,11 +19,13 @@ public class Dish  extends BaseEntity{
     @NotNull
     @Column(name = "name")
     private String name;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "menu_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-    @NotNull
+
     private Menu menu;
+
     public String getName() {
         return name;
     }

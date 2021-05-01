@@ -24,7 +24,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping(value = DishRestController.REST_URL)
 public class DishRestController {
 
-    public static final String REST_URL = "/api/v1/admin/dishes";
+    public static final String REST_URL = "/api/v1/admin/dishs";
 
     @Autowired
     private DishService service;

@@ -24,25 +24,13 @@ public class Menu extends BaseEntity {
     @NotNull
     private Restaurant restaurant;
 
-    public Menu() {
-    }
 
-
-    public Menu(List<Dish> dishs) {
-        this(null,  dishs);
-    }
-
-    public Menu(Long id, List<Dish> dishs) {
-        super(id);
-        this.dishs=dishs;
-
-    }
 
     public List<Dish> getDishs() {
         return dishs;
     }
 
-    public void setMenuItems(List<Dish> dishs) {
+    public void setDishs (List<Dish> dishs) {
         this.dishs = dishs;
     }
 

@@ -12,8 +12,7 @@ CREATE SEQUENCE GLOBAL_SEQ AS INTEGER START WITH 100000;
 CREATE TABLE users
 (
     id         INTEGER  PRIMARY KEY DEFAULT nextval('global_seq'),
-    username       VARCHAR(255)          NOT NULL,
-
+    username       VARCHAR(255)      NOT NULL,
     email      VARCHAR(255)          NOT NULL,
     password   VARCHAR(255)          NOT NULL,
     first_name  VARCHAR(255)         NOT NULL,
@@ -74,7 +73,7 @@ CREATE TABLE dish
     id   INTEGER PRIMARY KEY DEFAULT nextval('global_seq'),
     name VARCHAR(255) NOT NULL,
     price INTEGER NOT NULL,
-    menu_id INTEGER NOT NULL,
+    menu_id INTEGER ,
     created       DATE    NOT NULL,
     updated     TIMESTAMP            NOT NULL,
     status      VARCHAR(255)          NOT NULL,

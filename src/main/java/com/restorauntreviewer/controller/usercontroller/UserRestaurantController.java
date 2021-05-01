@@ -20,7 +20,7 @@ public class UserRestaurantController {
     @Autowired
     private RestaurantService service;
 
-    @JsonView(View.Web.class)
+
     @GetMapping
     public ResponseEntity<List<Restaurant>> getAll(){
 
