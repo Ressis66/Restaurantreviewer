@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.fasterxml.jackson.annotation.JsonView;
+
 @RestController
 @RequestMapping(value = RestaurantController.REST_URL)
 public class RestaurantController {
@@ -30,14 +30,14 @@ public class RestaurantController {
     @Autowired
     private RestaurantService service;
 
-    @JsonView(View.Web.class)
+
     @GetMapping
     public ResponseEntity<List<Restaurant>> getAll(){
 
         return new ResponseEntity<>(service.getAll(), HttpStatus.OK);
     }
 
-    @JsonView(View.Web.class)
+
     @GetMapping("/{id}")
     public Restaurant retrieve(@PathVariable("id") int id)  {
 
