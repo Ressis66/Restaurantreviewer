@@ -20,13 +20,13 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public Dish retrieve(int id)  {
+    public Dish retrieve(long id)  {
 
         return repository.findById(id).orElse(null);
     }
 
     @Override
-    public void delete(int id)  {
+    public void delete(long id)  {
 
         repository.delete(id);
     }
@@ -38,7 +38,7 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public void update(Dish newDish, int id) {
+    public void update(Dish newDish, long id) {
 
         repository.save(newDish);
     }

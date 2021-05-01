@@ -9,13 +9,13 @@ public interface DishService {
 
     List<Dish> getAll();
 
-    Dish retrieve(int id) ;
+    Dish retrieve(long id) ;
 
 
-    void delete(int id) ;
+    void delete(long id) ;
 
     Dish create(Dish dish);
 
 
-    void update(Dish dish, int id) ;
+    void update(Dish dish, long id) ;
 }
