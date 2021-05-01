@@ -19,8 +19,8 @@ REST API
 
 Авторизация (доступ для всех):
 
-http://localhost:8080/v1/auth/
+curl -i -X POST -d username=user -d password=password   http://localhost:8080/v1/auth/
 
 Проголосовать (доступ для имеющих роль User):
 
-http://localhost:8080/api/v1/users/vote/restaurantId
+curl -i -X POST -d rate=3.0 http://localhost:8080/api/v1/users/vote/restaurantId
