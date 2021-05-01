@@ -17,10 +17,12 @@ Each restaurant provides new menu each day.
 
 REST API
 
-Авторизация (доступ для всех):
+Authorization (access for everybody):
 
 curl -i -X POST -d username=user -d password=password   http://localhost:8080/v1/auth/
 
-Проголосовать (доступ для имеющих роль User):
+Attention! Project uses tokens!
+
+Votation (access for the person which has role: 'ROLE_USER'):
 
 curl -i -X POST -d rate=3.0 http://localhost:8080/api/v1/users/vote/restaurantId
