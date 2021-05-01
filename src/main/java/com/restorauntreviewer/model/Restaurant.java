@@ -13,29 +13,26 @@ import java.util.List;
 @Table(name = "restaurant")
 @JsonIgnoreProperties(value= {"menus","votes"})
 public class Restaurant extends BaseEntity {
+
+
     @NotNull
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
     @Fetch(FetchMode.SUBSELECT)
     @BatchSize(size = 200)
     @OrderBy("created DESC")
     protected List<Vote> votes;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
     @Fetch(FetchMode.SUBSELECT)
     @BatchSize(size = 200)
     @OrderBy("created DESC")
     protected List<Menu> menus;
 
-    public Restaurant() {
 
-    }
 
-    public Restaurant(Long id, String name) {
-        super(id);
-        this.name=name;
-    }
+
 
     public List<Vote> getVotes() {
         return votes;
@@ -51,5 +48,12 @@ public class Restaurant extends BaseEntity {
 
     public void setMenus(List<Menu> menus) {
         this.menus = menus;
+    }
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

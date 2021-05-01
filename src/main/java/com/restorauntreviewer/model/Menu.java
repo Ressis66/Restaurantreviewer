@@ -14,12 +14,12 @@ import java.util.Set;
 @JsonIgnoreProperties(value= {"dishs"})
 public class Menu extends BaseEntity {
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "menu")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "menu")
     @OrderBy("id DESC")
     private List<Dish> dishs;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "restaurant_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "restaurant_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private Restaurant restaurant;
@@ -32,7 +32,7 @@ public class Menu extends BaseEntity {
         this(null,  dishs);
     }
 
-    public Menu(Long id,  List<Dish> dishs) {
+    public Menu(Long id, List<Dish> dishs) {
         super(id);
         this.dishs=dishs;
 

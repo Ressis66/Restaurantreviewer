@@ -12,28 +12,24 @@ import java.util.Date;
 public class Dish  extends BaseEntity{
 
     @NotNull
-    @Column(name = "price", nullable = false)
+    @Column(name = "price")
     private int price;
+
+
     @NotNull
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "menu_id", nullable = false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "menu_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull
     private Menu menu;
-
-    public Dish() {
+    public String getName() {
+        return name;
     }
 
-    public Dish( int price) {
-        this.price = price;
-    }
-
-    public Dish(Long id, String name, int price) {
-        super(id);
+    public void setName(String name) {
         this.name = name;
-        this.price = price;
     }
 
     public int getPrice() {
@@ -51,4 +47,5 @@ public class Dish  extends BaseEntity{
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
 }
