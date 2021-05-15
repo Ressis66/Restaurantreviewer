@@ -26,7 +26,9 @@ Votation (access for the person which has role: 'ROLE_USER'):
 curl -i -X POST rate=rate  http://localhost:8080/api/v1/users
 
 GET all restaurants (access for the person which has role: 'ROLE_USER','ROLE_ADMIN')
+
 curl -i -X GET http://localhost:8080/api/v1/users/restaurants
 
 GET one restaurant (according to id) (access for the person which has role: 'ROLE_USER', 'ROLE_ADMIN')
+
 curl -i -X GET http://localhost:8080/api/v1/users/restaurants{id}
