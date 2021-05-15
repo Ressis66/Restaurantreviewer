@@ -23,7 +23,7 @@ curl -i -X POST -d username=RETA -d password=12alta   http://localhost:8080/v1/a
 
 Votation (access for the person which has role: 'ROLE_USER'):
 
-curl -i -X POST rate=rate  http://localhost:8080/api/v1/users
+curl -i -X POST rate=rate  http://localhost:8080/api/v1/users/vote/{restaurantId}
 
 GET all restaurants (access for the person which has role: 'ROLE_USER','ROLE_ADMIN')
 
