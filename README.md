@@ -17,12 +17,10 @@ Each restaurant provides new menu each day.
 
 REST API
 
-Authorization (access for everybody):
+Authorization (access for everybody). Attention! Project uses tokens(Bearer token)!
 
 curl -i -X POST -d username=user -d password=password   http://localhost:8080/v1/auth/
 
-Attention! Project uses tokens!
-
 Votation (access for the person which has role: 'ROLE_USER'):
 
-curl -i -X POST -d rate=3.0 http://localhost:8080/api/v1/users/vote/restaurantId
+curl -i -X POST rate=rate  http://localhost:8080/api/v1/users/vote/restaurantId
