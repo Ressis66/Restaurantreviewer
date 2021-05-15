@@ -14,11 +14,11 @@ import java.util.Set;
 @JsonIgnoreProperties(value= {"dishs"})
 public class Menu extends BaseEntity {
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "menu")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "menu")
     @OrderBy("id DESC")
     private List<Dish> dishs;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @NotNull

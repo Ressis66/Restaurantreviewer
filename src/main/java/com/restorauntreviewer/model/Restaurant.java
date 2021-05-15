@@ -18,13 +18,13 @@ public class Restaurant extends BaseEntity {
     @NotNull
     @Column(name = "name")
     private String name;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @Fetch(FetchMode.SUBSELECT)
     @BatchSize(size = 200)
     @OrderBy("created DESC")
     protected List<Vote> votes;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "restaurant")
     @Fetch(FetchMode.SUBSELECT)
     @BatchSize(size = 200)
     @OrderBy("created DESC")
