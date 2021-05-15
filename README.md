@@ -19,7 +19,7 @@ REST API
 
 Authorization (access for everybody). Attention! Project uses tokens(Bearer_token)! 
 
-curl -i -X POST -d username=user -d password=password   http://localhost:8080/v1/auth/
+curl -i -X POST -d username=RETA -d password=12alta   http://localhost:8080/v1/auth/
 
 Votation (access for the person which has role: 'ROLE_USER'):
 
