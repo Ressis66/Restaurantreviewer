@@ -32,3 +32,11 @@ curl -i -X GET http://localhost:8080/api/v1/users/restaurants (don't forget to i
 GET one restaurant (according to id) (access for the person which has role: 'ROLE_USER', 'ROLE_ADMIN')
 
 curl -i -X GET http://localhost:8080/api/v1/users/restaurants{id} (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
+
+GET all dishs  (access for the person which has role: 'ROLE_USER', 'ROLE_ADMIN')
+
+curl -i -X GET http://localhost:8080/api/v1/users/dishs (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
+
+GET one dish (according to id) (access for the person which has role: 'ROLE_USER', 'ROLE_ADMIN')
+
+curl -i -X GET http://localhost:8080/api/v1/users/dishs{id} (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
