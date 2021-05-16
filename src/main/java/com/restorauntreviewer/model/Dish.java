@@ -24,6 +24,7 @@ public class Dish extends BaseEntity  {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
+    @NotNull
     private Menu menu;
 
     public String getName() {

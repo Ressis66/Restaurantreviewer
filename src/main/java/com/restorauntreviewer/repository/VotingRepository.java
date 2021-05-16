@@ -20,5 +20,5 @@ public interface VotingRepository extends JpaRepository<Vote, Long> {
 
     @Override
     @Transactional
-    <S extends Vote> S save(S vote);
+    Vote  save(Vote vote);
 }
