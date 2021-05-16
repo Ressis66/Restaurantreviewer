@@ -1,15 +1,16 @@
 package com.restorauntreviewer.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
 
 @Entity
 @Table(name = "dish")
-public class Dish  extends BaseEntity{
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Dish extends BaseEntity  {
 
     @NotNull
     @Column(name = "price")
@@ -23,7 +24,6 @@ public class Dish  extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "menu_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
-
     private Menu menu;
 
     public String getName() {
@@ -49,5 +49,6 @@ public class Dish  extends BaseEntity{
     public void setMenu(Menu menu) {
         this.menu = menu;
     }
+
 
 }

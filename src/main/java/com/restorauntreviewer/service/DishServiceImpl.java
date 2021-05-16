@@ -22,7 +22,7 @@ public class DishServiceImpl implements DishService {
     @Override
     public Dish retrieve(long id)  {
 
-        return repository.findById(id).orElse(null);
+        return repository.findById(id).get();
     }
 
     @Override
