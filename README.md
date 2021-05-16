@@ -19,16 +19,16 @@ REST API
 
 Authorization (access for everybody). Attention! Project uses tokens(Bearer_token)! 
 
-curl -i -X POST -d username=RETA -d password=12alta   http://localhost:8080/v1/auth/
+curl -i -X POST -d username=RETA -d password=12alta   http://localhost:8080/v1/auth/ 
 
 Votation (access for the person which has role: 'ROLE_USER'):
 
-curl -i -X POST rate=rate  http://localhost:8080/api/v1/users/vote/{restaurantId}
+curl -i -X POST {rate=5.0}  http://localhost:8080/api/v1/users/vote/{restaurantId}?rate=5.0 (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
 
 GET all restaurants (access for the person which has role: 'ROLE_USER','ROLE_ADMIN')
 
-curl -i -X GET http://localhost:8080/api/v1/users/restaurants
+curl -i -X GET http://localhost:8080/api/v1/users/restaurants (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
 
 GET one restaurant (according to id) (access for the person which has role: 'ROLE_USER', 'ROLE_ADMIN')
 
-curl -i -X GET http://localhost:8080/api/v1/users/restaurants{id}
+curl -i -X GET http://localhost:8080/api/v1/users/restaurants{id} (don't forget to insert given token with prefix 'Bearer_' !!!!!!!)
